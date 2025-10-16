@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konkurs</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Główna</a>
+      <a href="login.html">Login</a>
+      <a href="konkurs.html">Konkurs</a>
+      <a href="uwagi.html">Uwagi</a>
+    </nav>
+    <header>
+      <h1>Uwagi o formularzach HTML bez JS'a</h1>
+    </header>
+    <main id="uwagi">
+      <article>
+        <section id="ogolne_uwagi">
+          Formularze HTML <strong>bez JavaScriptu</strong> to poleganie
+          wyłącznie na natywnych kontrolkach przeglądarki (input, select,
+          textarea, fieldset) oraz na prostych atrybutach do walidacji
+          (required, type itp.). Działa to wszędzie i jest
+          <strong>prostsze do zrobienia i przetestowania</strong>, co sprawia,
+          że jest to dość łatwe i zrozumiałe w kodowaniu. Dobrze też się skacze
+          po polach formularza przy użyciu TAB, SHIFT+TAB, Spacji do zaznaczania
+          checkboxów itp. <br /><br />
+          Z drugiej strony natywne
+          <strong
+            >elementy wyglądają i zachowują się różnie w różnych
+            przeglądarkach</strong
+          >
+          i są ograniczone pod względem <strong>UI</strong> — nie ma kontroli
+          nad np. formatem daty w inpucie 'date', trzeba
+          <strong>ręcznie</strong> oznaczać każde
+          <strong>pole jako wymagane</strong>. Do pisania nawet prostych
+          formularzy, ciągłe używanie znaczika label
+          <strong>zaśmieca</strong> moim zdaniem kod, powinien być na to
+          bardziej elegancki sposób. Dużo < label > w kodzie wygląda
+          niechlujnie,
+          <strong>CSS często pisze się pod konkretne typy</strong>
+          (input[type='text'] itp.), znacznik < select > bywa nieintuicyjny, a
+          brak globalnego sposobu na oznaczenie wszystkich pól jako required
+          jest dodatkowym minusem. <br /><br />
+          <strong
+            >Poniżej, w formie TL;DR przedstawiam główne moim zdaniem zalety i
+            wady.</strong
+          >
+        </section>
+        <table>
+          <tr>
+            <th>Zalety</th>
+            <th>Wady</th>
+          </tr>
+          <tr>
+            <td>
+              <section id="zalety">
+                <ul>
+                  <li>proste w pisaniu</li>
+                  <li>łatwa nawigacja klawiaturą</li>
+                  <li>łatwiejsze testowanie niż z JS'em</li>
+                  <li>podstawowa walidacja HTML jest sensowna</li>
+                </ul>
+              </section>
+            </td>
+            <td>
+              <section id="wady">
+                <ul>
+                  <li>różny wygląd na przeglądarkach</li>
+                  <li>stylizowanie poszczególnych typów inputów</li>
+                  <li>listy wyboru nieintuicyjne w pisaniu</li>
+                  <li>brak możliwości zaznacenia wszystkich pól na required</li>
+                </ul>
+              </section>
+            </td>
+          </tr>
+        </table>
+      </article>
+    </main>
+  </body>
+</html>
