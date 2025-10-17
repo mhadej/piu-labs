@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+fieldset {
+  background-color: rgb(255, 242, 226);
+  border: 1px solid tomato;
+  border-radius: 10px;
+  height: 6vh;
+
+  legend {
+    font-weight: bold;
+  }
+}
