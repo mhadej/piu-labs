@@ -1,16 +1,168 @@
 body {
-  font-family: Arial, sans-serif;
+  font: 16px/1 Arial, sans-serif;
   margin: 0;
   padding: 1rem;
 }
 
-fieldset {
-  background-color: rgb(255, 242, 226);
-  border: 1px solid tomato;
-  border-radius: 10px;
-  height: 6vh;
+fieldset,
+.container {
+  background: ivory;
+  border: 1px solid #d47a35;
+  border-radius: 5px;
+  padding: 10px;
+}
 
-  legend {
-    font-weight: bold;
+fieldset {
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.item {
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  flex-grow: 1;
+  position: static;
+}
+
+/* NIEBIESKI */
+
+body:has(.theme-picker input[value='blue']:checked) .container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+}
+
+body:has(.theme-picker input[value='blue']:checked) .item {
+  background: blue;
+  width: 25%;
+  max-width: 25%;
+
+  @media (max-width: 1024px) {
+    min-width: 50%;
+  }
+}
+
+/* CZERWONY */
+body:has(.theme-picker input[value='red']:checked) .container {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+  }
+}
+
+body:has(.theme-picker input[value='red']:checked) .item {
+  background: red;
+  order: 1;
+  flex-grow: 1;
+  align-items: center;
+  align-content: center;
+
+  @media (max-width: 1024px) {
+    width: 30%;
+  }
+
+  &:first-child {
+    font-weight: 700;
+    flex-grow: 2;
+    order: 2;
+
+    &::after {
+      content: '\A(Jestem większy i na środku!)';
+      white-space: pre;
+      font-weight: 300;
+      font-size: 80%;
+    }
+
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+  }
+}
+
+body:has(.theme-picker input[value='red']:checked) .item:nth-child(4),
+body:has(.theme-picker input[value='red']:checked) .item:nth-child(5) {
+  order: 3;
+}
+
+/* ZIELONY */
+body:has(.theme-picker input[value='green']:checked) .container {
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+}
+
+body:has(.theme-picker input[value='green']:checked) .item {
+  background: green;
+  position: relative;
+
+  &:first-child {
+    flex-grow: 5;
+    max-width: 100%;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '😀';
+      font-size: 2em;
+      top: 0.7rem;
+    }
+
+    @media (max-width: 1024px) {
+      min-width: 90%;
+    }
+  }
+  &::before {
+    left: 0.3rem;
+  }
+
+  &::after {
+    right: 0.3rem;
+  }
+
+  &:nth-child(2) {
+    flex-grow: 4;
+    max-width: 80%;
+    @media (max-width: 1024px) {
+      min-width: 70%;
+    }
+  }
+
+  &:nth-child(3) {
+    flex-grow: 3;
+    max-width: 60%;
+    @media (max-width: 1024px) {
+      min-width: 50%;
+    }
+  }
+
+  &:nth-child(4) {
+    flex-grow: 2;
+    max-width: 40%;
+    @media (max-width: 1024px) {
+      min-width: 30%;
+    }
+  }
+
+  &:nth-child(5) {
+    flex-grow: 1;
+    max-width: 20%;
+    @media (max-width: 1024px) {
+      min-width: 10%;
+    }
   }
 }
