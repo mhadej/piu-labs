@@ -1,9 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Galeria</title>
+    <link rel="stylesheet" href="galeria.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Galeria zabytków</h1>
+      </header>
+
+      <main class="gallery" aria-label="Galeria zabytków">
+        <figure>
+          <picture>
+            <source srcset="images/giza.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/giza_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/giza.webp" media="(min-width:800px)" />
+            <img src="images/500/giza_500.webp" alt="Piramidy w Gizie" />
+          </picture>
+          <figcaption>
+            <strong>Piramidy w Gizie</strong><br />Giza, Egipt
+          </figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/hagia.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/hagia_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/hagia.webp" media="(min-width:800px)" />
+            <img src="images/500/hagia_500.webp" alt="Hagia Sophia" />
+          </picture>
+          <figcaption>
+            <strong>Hagia Sophia</strong><br />Stambuł, Turcja
+          </figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/itza.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/itza_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/itza.webp" media="(min-width:800px)" />
+            <img src="images/500/itza_500.webp" alt="Chichén Itzá" />
+          </picture>
+          <figcaption><strong>Chichén Itzá</strong><br />Meksyk</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/jesus.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/jesus_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/jesus.webp" media="(min-width:800px)" />
+            <img
+              src="images/500/jesus_500.webp"
+              alt="Posąg Chrystusa Odkupiciela"
+            />
+          </picture>
+          <figcaption>
+            <strong>Chrystus Odkupiciel</strong><br />Rio de Janeiro, Brazylia
+          </figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/koloseuum.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/koloseuum_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/koloseuum.webp" media="(min-width:800px)" />
+            <img src="images/500/koloseuum_500.webp" alt="Koloseum w Rzymie" />
+          </picture>
+          <figcaption><strong>Koloseum</strong><br />Rzym, Włochy</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/mahal.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/mahal_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/mahal.webp" media="(min-width:800px)" />
+            <img src="images/500/mahal_500.webp" alt="Taj Mahal" />
+          </picture>
+          <figcaption><strong>Taj Mahal</strong><br />Agra, Indie</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/moai.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/moai_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/moai.webp" media="(min-width:800px)" />
+            <img src="images/500/moai_500.webp" alt="Posągi Moai" />
+          </picture>
+          <figcaption><strong>Moai</strong><br />Wyspa Wielkanocna</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/mur.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/mur_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/mur.webp" media="(min-width:800px)" />
+            <img src="images/500/mur_500.webp" alt="Wielki Mur Chiński" />
+          </picture>
+          <figcaption><strong>Wielki Mur</strong><br />Chiny</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/petra.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/petra_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/petra.webp" media="(min-width:800px)" />
+            <img src="images/500/petra_500.webp" alt="Petra" />
+          </picture>
+          <figcaption><strong>Petra</strong><br />Jordania</figcaption>
+        </figure>
+
+        <figure>
+          <picture>
+            <source srcset="images/pikczu.webp" media="(min-width:1600px)" />
+            <source
+              srcset="images/500/pikczu_500.webp"
+              media="(min-width:1200px)"
+            />
+            <source srcset="images/pikczu.webp" media="(min-width:800px)" />
+            <img src="images/500/pikczu_500.webp" alt="Machu Picchu" />
+          </picture>
+          <figcaption><strong>Machu Picchu</strong><br />Perú</figcaption>
+        </figure>
+      </main>
+    </div>
+  </body>
 </html>
