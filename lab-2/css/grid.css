@@ -1,0 +1,121 @@
+/* Reset stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: whitesmoke;
+}
+
+main,
+aside {
+  h1,
+  h2,
+  h3,
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+div.container {
+  max-width: 1200px;
+  margin: auto;
+
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr 10fr 3fr 0.6fr;
+
+  * {
+    padding: 5px 5px 0px 5px;
+  }
+
+  header {
+    background-color: orange;
+    color: white;
+
+    * {
+      display: inline-block;
+    }
+
+    .logo {
+      margin-left: 1vw;
+      padding: 10px;
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+
+      &::before {
+        content: 'Logo';
+        font-weight: 600;
+      }
+    }
+  }
+
+  nav {
+    background-color: #2880b9;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  main {
+    background-color: white;
+  }
+  aside {
+    background-color: #d4efdf;
+    p {
+      font-weight: 600;
+    }
+    div {
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+  footer {
+    background-color: mediumseagreen;
+    color: white;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  div.container {
+    display: grid;
+    height: 100%;
+
+    grid-template-areas:
+      'header header'
+      'nav nav'
+      'main ads'
+      'footer footer';
+
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 0.5fr 10fr 0.6fr;
+
+    header {
+      grid-area: header;
+    }
+    nav {
+      grid-area: nav;
+      text-align: left;
+    }
+    main {
+      grid-area: main;
+    }
+    aside {
+      grid-area: ads;
+    }
+    footer {
+      grid-area: footer;
+    }
+  }
+}

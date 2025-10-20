@@ -1,5 +1,6 @@
 body {
-  font: 16px/1 Arial, sans-serif;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 1rem;
 }
@@ -119,7 +120,7 @@ body:has(.theme-picker input[value='green']:checked) .item {
       position: absolute;
       content: '😀';
       font-size: 2em;
-      top: 0.7rem;
+      top: 0.3rem;
     }
 
     @media (max-width: 1024px) {
