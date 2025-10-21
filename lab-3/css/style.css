@@ -7,13 +7,16 @@ html {
 body {
   margin: 1rem;
   padding: 0;
+  background-color: whitesmoke;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+:root {
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+
+main {
+  display: flex;
+}
+
+fieldset {
+  border: 0;
 }
