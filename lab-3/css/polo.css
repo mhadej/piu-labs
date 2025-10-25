@@ -25,7 +25,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   background-color: whitesmoke;
-  padding: 20px;
+  padding: 20px 0px;
 
   box-sizing: border-box;
 
@@ -37,6 +37,8 @@ main {
     width: min(500px, 100%);
     aspect-ratio: 1 / 1;
 
+    cursor: pointer;
+
     border: 3px solid var(--main-color, #1e5a9c);
     border-radius: 5px;
 
@@ -44,6 +46,14 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-color: white;
+
+    transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.2, 1),
+      box-shadow 0.45s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
   }
 
   div.choice {
@@ -65,6 +75,7 @@ main {
         span#title {
           font-weight: 900;
           font-size: larger;
+          transition: color 0.25s ease, transform 0.28s ease;
         }
         span#discount {
           color: white;
@@ -72,6 +83,21 @@ main {
           padding: 5px 10px;
           border-radius: 5px;
           font-weight: bold;
+          position: relative;
+          display: inline-block;
+
+          transition: transform 0.28s ease, box-shadow 0.28s ease,
+            background-color 0.28s ease;
+          cursor: default;
+
+          &::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 7px;
+            border: 2px dashed var(--main-color);
+            animation: blink 1.5s ease-in-out infinite;
+          }
         }
       }
 
@@ -87,6 +113,7 @@ main {
         display: inline-block;
         width: 1.5rem;
         height: 1.5rem;
+        cursor: pointer;
       }
       label[for='blue'] {
         background-color: #1e5a9c;
@@ -103,7 +130,9 @@ main {
 
       input[type='radio']:checked + label {
         border: 1px solid black;
-        box-shadow: inset 0 0 0 0.2rem white;
+        box-shadow: inset 0 0 0 0.2rem white !important;
+
+        animation: sheen 2s ease-in-out 0s infinite;
       }
     }
     div.sizes {
@@ -116,6 +145,9 @@ main {
         width: 1rem;
         height: 1rem;
         text-align: center;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
       }
       label[for='blue'] {
         background-color: var(--blue-color);
@@ -133,6 +165,27 @@ main {
       input[type='radio']:checked + label {
         background-color: var(--main-color);
         color: white;
+
+        animation: size-pop 0.46s cubic-bezier(0.2, 0.9, 0.2, 1) forwards,
+          sheen 2s ease-in-out 0.6s infinite;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 70%
+          );
+          transform: translateX(-120%) rotate(12deg);
+          animation: shine 3s cubic-bezier(0.2, 0.9, 0.2, 1) 0s 1;
+          pointer-events: none;
+        }
       }
     }
     div.cart {
@@ -144,6 +197,20 @@ main {
       padding: 20px;
       border-radius: 5px;
       text-align: center;
+
+      transition: transform 0.22s cubic-bezier(0.2, 0.9, 0.2, 1),
+        box-shadow 0.28s ease, background-color 0.18s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35),
+          0 0 30px rgba(255, 255, 255, 0.02), 0 0 28px var(--main-color);
+      }
+
+      &:active {
+        transform: translateY(-2px) scale(0.99);
+      }
     }
   }
 }
@@ -170,5 +237,64 @@ body:has(#yellow:checked) {
   --main-color: #fbc02d;
   div.image {
     background-image: url(/lab-3/img/polo_y.png);
+  }
+}
+
+/*ANIMACJE*/
+
+label {
+  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 0.35s ease, background-color 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+input[type='radio']:checked + label {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25), 0 0 28px rgba(255, 255, 255, 0.06),
+    0 0 32px var(--main-color);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+
+div.choice input[type='radio'] + label:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+@keyframes size-pop {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  45% {
+    transform: translateY(-12px) scale(1.16);
+  }
+  100% {
+    transform: translateY(-6px) scale(1.06);
+  }
+}
+
+@keyframes sheen {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.06), 0 0 36px var(--main-color);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes shine {
+  to {
+    transform: translateX(120%) rotate(12deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
