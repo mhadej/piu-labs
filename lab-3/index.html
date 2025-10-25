@@ -3,20 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/polo.css" />
   </head>
   <body>
     <main>
-      <div class="image">
-        <img src="img/polo_b.png" alt="niebieska" />
-      </div>
+      <div class="image"></div>
       <div class="choice">
         <div class="description">
-          <span id="title">Koszulka Polo</span>
-          <span id="discount">Promocja!</span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis
-          doloremque reprehenderit quam.
+          <header>
+            <span id="title">Koszulka Polo</span>
+            <span id="discount">Promocja!</span>
+          </header>
+          <span id="brief">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Perferendis doloremque reprehenderit quam.
+          </span>
         </div>
+        <div class="colors">
+          <h4>Kolor</h4>
+          <input type="radio" name="color" id="blue" hidden checked />
+          <label for="blue"></label>
+          <input type="radio" name="color" id="red" hidden />
+          <label for="red"></label>
+          <input type="radio" name="color" id="green" hidden />
+          <label for="green"></label>
+          <input type="radio" name="color" id="yellow" hidden />
+          <label for="yellow"></label>
+        </div>
+        <div class="sizes">
+          <h4>Rozmiar</h4>
+          <input type="radio" name="size" id="small" hidden />
+          <label for="small">S</label>
+          <input type="radio" name="size" id="medium" hidden checked />
+          <label for="medium">M</label>
+          <input type="radio" name="size" id="large" hidden />
+          <label for="large">L</label>
+          <input type="radio" name="size" id="extra" hidden />
+          <label for="extra">XL</label>
+        </div>
+        <div class="price">
+          <h4>59,99zł</h4>
+        </div>
+        <div class="cart">🛒 Do koszyka</div>
       </div>
     </main>
   </body>
