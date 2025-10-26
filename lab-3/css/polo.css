@@ -218,25 +218,25 @@ main {
 body:has(#blue:checked) {
   --main-color: #1e5a9c;
   div.image {
-    background-image: url(/lab-3/img/polo_b.png);
+    background-image: url(../img/polo_b.png);
   }
 }
 body:has(#red:checked) {
   --main-color: #d32f2f;
   div.image {
-    background-image: url(/lab-3/img/polo_r.png);
+    background-image: url(../img/polo_r.png);
   }
 }
 body:has(#green:checked) {
   --main-color: #388e3c;
   div.image {
-    background-image: url(/lab-3/img/polo_g.png);
+    background-image: url(../img/polo_g.png);
   }
 }
 body:has(#yellow:checked) {
   --main-color: #fbc02d;
   div.image {
-    background-image: url(/lab-3/img/polo_y.png);
+    background-image: url(../img/polo_y.png);
   }
 }
 
