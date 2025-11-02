@@ -1,19 +1,182 @@
-/* Minimalny reset  */
-html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
-}
-body {
-  margin: 1rem;
-  padding: 0;
+:root {
+  --cyan: #a7e8f2;
+  --magenta: #f7a7da;
+  --yellow: #f9d77e;
+  --text: #222;
+  --radius: 12px;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+body {
+  background: #f4eef8;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.column {
+  background: white;
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.todo h2 {
+  background: var(--cyan);
+  border-bottom: 3px solid rgb(20, 109, 109);
+  border-right: 2px solid rgb(20, 109, 109);
+}
+.doing h2 {
+  background: var(--magenta);
+  border-bottom: 3px solid rgb(109, 20, 90);
+  border-right: 2px solid rgb(109, 20, 90);
+}
+.done h2 {
+  background: var(--yellow);
+  border-bottom: 3px solid rgb(109, 100, 20);
+  border-right: 2px solid rgb(109, 100, 20);
+}
+
+h2 {
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  margin-top: 0.8rem;
+
+  span {
+    font-weight: normal;
+  }
+}
+
+.column-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button.remove {
+  color: red;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.todo {
+  .column-buttons > button {
+    border-bottom: 3px solid rgb(20, 109, 109);
+    border-right: 2px solid rgb(20, 109, 109);
+  }
+}
+.doing {
+  .column-buttons > button {
+    border-bottom: 3px solid rgb(109, 20, 90);
+    border-right: 2px solid rgb(109, 20, 90);
+  }
+}
+.done {
+  .column-buttons > button {
+    border-bottom: 3px solid rgb(109, 100, 20);
+    border-right: 2px solid rgb(109, 100, 20);
+  }
+}
+
+.todo button {
+  background: var(--cyan);
+}
+.doing button {
+  background: var(--magenta);
+}
+.done button {
+  background: var(--yellow);
+}
+
+.notes {
+  min-height: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.note {
+  width: calc(40% - 0.5rem);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: hsl(0, 0%, 90%);
+}
+
+.note:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.note .text {
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+  min-height: 60px;
+  resize: none;
+}
+
+.note .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  #remove_button {
+    color: crimson;
+  }
+}
+
+.note:hover .buttons {
+  opacity: 1;
+}
+
+.note .buttons button {
+  padding: 0.3rem 0.5rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#clearall {
+  margin-top: 2rem;
+  padding: 0.6rem 1rem;
+  background: #ff7c7c;
+  color: white;
+  border-radius: var(--radius);
 }

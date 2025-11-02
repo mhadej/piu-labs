@@ -2,11 +2,45 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 4</title>
+    <title>Tablica Kanban</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js.js" defer></script>
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <h1>Tablica Kanban</h1>
+    <main>
+      <div class="column todo">
+        <h2>Do zrobienia: <span id="to-do-count"></span></h2>
+
+        <div class="notes"></div>
+        <div class="column-buttons">
+          <button class="add">Dodaj notatkę</button>
+          <button class="color-all">Koloruj kolumnę</button>
+          <button class="sort">Sortuj alfabetycznie</button>
+        </div>
+      </div>
+
+      <div class="column doing">
+        <h2>W trakcie: <span id="doing-count"></span></h2>
+        <div class="notes"></div>
+        <div class="column-buttons">
+          <button class="add">Dodaj notatkę</button>
+          <button class="color-all">Koloruj kolumnę</button>
+          <button class="sort">Sortuj alfabetycznie</button>
+        </div>
+      </div>
+
+      <div class="column done">
+        <h2>Zrobione: <span id="done-count"></span></h2>
+        <div class="notes"></div>
+        <div class="column-buttons">
+          <button class="add">Dodaj notatkę</button>
+          <button class="color-all">Koloruj kolumnę</button>
+          <button class="sort">Sortuj alfabetycznie</button>
+        </div>
+      </div>
+    </main>
+
+    <button id="clearall">Wyczyść wszystko</button>
   </body>
 </html>
