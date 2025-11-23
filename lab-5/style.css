@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #0056b3;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:nth-child(even) {
+      background-color: rgb(228, 103, 114);
+
+      &:hover {
+        background: rgb(173, 52, 62);
+      }
+    }
+
+    &:nth-child(1) {
+      order: 1;
+    }
+    &:nth-child(2) {
+      order: 3;
+    }
+    &:nth-child(3) {
+      order: 2;
+    }
+    &:nth-child(4) {
+      order: 4;
+    }
+
+    @media (max-width: 700px) {
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 2;
+      }
+      &:nth-child(3) {
+        order: 3;
+      }
+      &:nth-child(4) {
+        order: 4;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.counters {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
+
+  span {
+    font-size: 16px;
+    color: #555;
+
+    strong {
+      color: #007bff;
+      font-size: 18px;
+    }
+  }
+}
+
+.shapes-container {
+  min-height: 200px;
+  padding: 20px;
+  background: #fafafa;
+  border: 2px dashed #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.shape {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  &.square {
+    border-radius: 5px;
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
+}
+
+.shape.removing {
+  animation: shrinkFade 0.2s ease-out forwards;
+}
+
+@keyframes shrinkFade {
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
