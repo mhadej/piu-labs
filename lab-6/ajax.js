@@ -41,9 +41,19 @@ class Ajax {
             clearTimeout(timeoutId);
 
             if (!response.ok) {
-                throw new Error(
-                    `HTTP ${response.status}: ${response.statusText}`
-                );
+                let friendly = '';
+
+                if (response.status === 404) {
+                    friendly =
+                        'Zasób nie został znaleziony (404). Sprawdź URL lub ID.';
+                } else if (response.status >= 500) {
+                    friendly =
+                        'Błąd po stronie serwera. Spróbuj ponownie później.';
+                } else {
+                    friendly = `Błąd HTTP ${response.status}.`;
+                }
+
+                throw new Error(friendly);
             }
 
             const data = await response.json();
