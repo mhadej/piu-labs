@@ -1,0 +1,55 @@
+<style>
+  :host {
+    display: block;
+  }
+
+  .sizes-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #888;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .sizes-wrapper {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .size-option {
+    padding: 8px 12px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #aaa;
+    transition: all 0.25s;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 40px;
+    text-align: center;
+  }
+
+  .size-option:hover {
+    border-color: #00d4aa;
+    color: #fff;
+    background: rgba(0, 212, 170, 0.08);
+  }
+
+  .size-option.selected {
+    background: linear-gradient(135deg, #00d4aa, #00b8a9);
+    border-color: #00d4aa;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
+  }
+</style>
+
+<div class="sizes-label">Rozmiary</div>
+<div class="sizes-wrapper">
+  <slot></slot>
+</div>

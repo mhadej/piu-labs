@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sklep Odzieżowy - Komponenty</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sklep Odzieżowy</h1>
+      <div class="products-grid">
+        <product-card>
+          <img slot="image" src="./img/tshirt.jpg" alt="T-Shirt" />
+          <span slot="name">T-Shirt</span>
+          <span slot="price">79 zł</span>
+          <span slot="promo">-20%</span>
+          <color-list slot="colors">
+            <span data-color="#FFF">Biały</span>
+            <span data-color="#4ECDC4">Turkusowy</span>
+            <span data-color="#000">Czarny</span>
+          </color-list>
+          <size-list slot="sizes">
+            <span>XS</span>
+            <span>S</span>
+            <span>M</span>
+            <span>L</span>
+            <span>XL</span>
+          </size-list>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/jeans_500.webp" alt="Jeans" />
+          <span slot="name">Jeansy</span>
+          <span slot="price">199 zł</span>
+          <size-list slot="sizes">
+            <span>28</span>
+            <span>30</span>
+            <span>32</span>
+            <span>34</span>
+            <span>36</span>
+          </size-list>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/hoodie_500.webp" alt="Hoodie" />
+          <span slot="name">Bluza</span>
+          <span slot="price">149 zł</span>
+          <span slot="promo">-15%</span>
+          <color-list slot="colors">
+            <span data-color="lightgray">Szary</span>
+            <span data-color="#A23B72">Purpurowy</span>
+            <span data-color="#F18F01">Pomarańczowy</span>
+            <span data-color="#C73E1D">Bordowy</span>
+          </color-list>
+          <size-list slot="sizes">
+            <span>XS</span>
+            <span>S</span>
+            <span>M</span>
+            <span>L</span>
+            <span>XL</span>
+            <span>XXL</span>
+          </size-list>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/dress_500.webp" alt="Dress" />
+          <span slot="name">Sukienka</span>
+          <span slot="price">299 zł</span>
+          <color-list slot="colors">
+            <span data-color="#D4AF37">Złoty</span>
+            <span data-color="#000">Czarny</span>
+            <span data-color="#FFFFFF">Biały</span>
+          </color-list>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/jacket_500.webp" alt="Jacket" />
+          <span slot="name">Kurtka</span>
+          <span slot="price">449 zł</span>
+          <span slot="promo">-30%</span>
+          <color-list slot="colors">
+            <span data-color="navy">Niebieski</span>
+            <span data-color="#8B4513">Brązowy</span>
+          </color-list>
+          <size-list slot="sizes">
+            <span>XS</span>
+            <span>S</span>
+            <span>M</span>
+            <span>L</span>
+            <span>XL</span>
+          </size-list>
+        </product-card>
+
+        <product-card>
+          <img slot="image" src="./img/socks_500.webp" alt="Socks" />
+          <span slot="name">Skarpety</span>
+          <span slot="price">29 zł</span>
+          <color-list slot="colors">
+            <span data-color="#808080">Szare</span>
+            <span data-color="#FFFFFF">Białe</span>
+            <span data-color="#000">Czarne</span>
+          </color-list>
+        </product-card>
+      </div>
+    </div>
+  </body>
+</html>
