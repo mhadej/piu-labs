@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Koszulka",
+    "price": 79,
+    "image": "./img/tshirt.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Jeansy",
+    "price": 199,
+    "image": "./img/jeans_500.webp"
+  },
+  {
+    "id": 3,
+    "name": "Bluza",
+    "price": 149,
+    "image": "./img/hoodie_500.webp"
+  },
+  {
+    "id": 4,
+    "name": "Sukienka",
+    "price": 299,
+    "image": "./img/dress_500.webp"
+  },
+  {
+    "id": 5,
+    "name": "Kurtka",
+    "price": 449,
+    "image": "./img/jacket_500.webp"
+  },
+  {
+    "id": 6,
+    "name": "Skarpety",
+    "price": 29,
+    "image": "./img/socks_500.webp"
+  }
+]

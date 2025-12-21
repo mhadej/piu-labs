@@ -11,13 +11,45 @@ export default class ProductCard extends HTMLElement {
         shadow.appendChild(template.content.cloneNode(true));
     }
 
-    connectedCallback() {
-        const promoContent = this.querySelector('[slot="promo"]');
-        const promoEl = this.shadowRoot.querySelector('.promo');
+    set product(value) {
+        this._product = value;
+        this.render();
+    }
 
-        if (!promoContent || !promoContent.textContent.trim()) {
-            promoEl.style.display = 'none';
+    get product() {
+        return this._product;
+    }
+
+    connectedCallback() {
+        const btn = this.shadowRoot.querySelector('.add-to-cart');
+        btn.addEventListener('click', () => this.handleAddToCart());
+    }
+
+    render() {
+        const img = this.shadowRoot.querySelector('img');
+        const name = this.shadowRoot.querySelector('.name');
+        const price = this.shadowRoot.querySelector('.price');
+
+        if (this._product) {
+            img.src = this._product.image;
+            img.alt = this._product.name;
+            name.textContent = this._product.name;
+            price.textContent = `${this._product.price} zł`;
         }
+    }
+
+    handleAddToCart() {
+        this.dispatchEvent(
+            new CustomEvent('add-to-cart', {
+                detail: {
+                    id: this._product.id,
+                    name: this._product.name,
+                    price: this._product.price,
+                },
+                bubbles: true,
+                composed: true,
+            })
+        );
     }
 }
 
